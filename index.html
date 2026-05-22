@@ -383,6 +383,93 @@ img{max-width:100%;display:block;}
 .stat-label{font-size:.75rem;color:var(--muted);font-weight:600;margin-top:.3rem;}
 .stat-div{width:1px;height:40px;background:var(--border);}
 
+/* ===== NEW SECTIONS STYLES (Why Choose & Free Resources) ===== */
+.section-pad{
+  padding: 4rem 0;
+}
+.section-header{
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+.section-header h2{
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, var(--primary), var(--orange));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+.section-header .sub{
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.cards-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+.card-new{
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  opacity: 0;
+  transform: translateY(20px);
+}
+.card-new.revealed{
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s;
+}
+.card-new:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(64,97,219,0.1);
+  border-color: var(--border);
+}
+.card-icon-new{
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(64,97,219,0.1), rgba(249,115,22,0.08));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.card-icon-new i{
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+.card-new h3{
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+.card-new p{
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.alt-icon i{
+  color: var(--orange);
+}
+.alt-icon{
+  background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(64,97,219,0.05));
+}
+@media (max-width: 768px){
+  .section-header h2{ font-size: 1.7rem; }
+  .card-new{ padding: 1.4rem; }
+}
+@media (max-width: 480px){
+  .cards-grid{ gap: 1.2rem; }
+}
+
 /* ===== ANIMATIONS ===== */
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
@@ -467,149 +554,33 @@ img{max-width:100%;display:block;}
 
 <!-- ===== HERO SECTION ===== -->
 <section class="hero" id="home">
-  <!-- Background blobs -->
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
-
   <div class="container">
     <div class="hero-inner">
-
-      <!-- LEFT: Content -->
       <div class="hero-content">
-        <div class="badge-pill">
-          <i class="fas fa-fire"></i>
-          <span>Rajasthan's #1 English Medium Platform for CET 2027</span>
-        </div>
-
-        <h1 class="hero-title">
-          <span class="line-1">Crack CET 2027</span>
-          <span class="line-2">With Confidence</span>
-          <span class="line-3">& English Medium Classes</span>
-        </h1>
-
-        <p class="hero-desc">
-          Join <strong>500+ students</strong> preparing for Rajasthan CET 12th Level with expert English-medium coaching. Daily current affairs, previous year papers & live doubt sessions.
-        </p>
-
-        <div class="hero-btns">
-          <a href="courses.html" class="btn-hero-primary">
-            <span class="btn-icon"><i class="fas fa-rocket"></i></span>
-            Start Preparing Now
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="app.html" class="btn-hero-secondary">
-            <i class="fas fa-download"></i>
-            Download Free App
-          </a>
-        </div>
-
-        <div class="trust-row">
-          <div class="trust-avatars">
-            <span>PK</span>
-            <span>JY</span>
-            <span>MK</span>
-            <span>PK</span>
-            <span style="background:linear-gradient(135deg,#10b981,#059669)">+</span>
-          </div>
-          <div class="trust-text">
-            <div class="stars">★★★★★</div>
-            <strong>500+ Students</strong> already enrolled
-          </div>
-        </div>
+        <div class="badge-pill"><i class="fas fa-fire"></i><span>Rajasthan's #1 English Medium Platform for CET 2027</span></div>
+        <h1 class="hero-title"><span class="line-1">Crack CET 2027</span><span class="line-2">With Confidence</span><span class="line-3">& English Medium Classes</span></h1>
+        <p class="hero-desc">Join <strong>500+ students</strong> preparing for Rajasthan CET 12th Level with expert English-medium coaching. Daily current affairs, previous year papers & live doubt sessions.</p>
+        <div class="hero-btns"><a href="courses.html" class="btn-hero-primary"><span class="btn-icon"><i class="fas fa-rocket"></i></span>Start Preparing Now<i class="fas fa-arrow-right"></i></a><a href="app.html" class="btn-hero-secondary"><i class="fas fa-download"></i>Download Free App</a></div>
+        <div class="trust-row"><div class="trust-avatars"><span>PK</span><span>JY</span><span>MK</span><span>PK</span><span style="background:linear-gradient(135deg,#10b981,#059669)">+</span></div><div class="trust-text"><div class="stars">★★★★★</div><strong>500+ Students</strong> already enrolled</div></div>
       </div>
-
-      <!-- RIGHT: Visual Card -->
       <div class="hero-visual">
-        <div class="deco-dots dd-tr"></div>
-        <div class="deco-dots dd-bl"></div>
-
-        <!-- Floating left mini card -->
-        <div class="float-card fc-left">
-          <div class="fc-icon fc-icon-blue"><i class="fas fa-trophy"></i></div>
-          <div class="fc-info">
-            <div class="fc-val">Top Rank</div>
-            <div class="fc-lab">Batch Result 2024</div>
-          </div>
-        </div>
-
-        <!-- Floating right mini card -->
-        <div class="float-card fc-right">
-          <div class="fc-icon fc-icon-orange"><i class="fas fa-bolt"></i></div>
-          <div class="fc-info">
-            <div class="fc-val">Live Now</div>
-            <div class="fc-lab">GK Class • 4 PM</div>
-          </div>
-        </div>
-
-        <!-- Main card -->
+        <div class="deco-dots dd-tr"></div><div class="deco-dots dd-bl"></div>
+        <div class="float-card fc-left"><div class="fc-icon fc-icon-blue"><i class="fas fa-trophy"></i></div><div class="fc-info"><div class="fc-val">Top Rank</div><div class="fc-lab">Batch Result 2024</div></div></div>
+        <div class="float-card fc-right"><div class="fc-icon fc-icon-orange"><i class="fas fa-bolt"></i></div><div class="fc-info"><div class="fc-val">Live Now</div><div class="fc-lab">GK Class • 4 PM</div></div></div>
         <div class="main-card">
-          <div class="card-header">
-            <div class="card-header-left">
-              <div class="card-avatar"><i class="fas fa-graduation-cap"></i></div>
-              <div>
-                <div class="card-title">CET 2027 Batch</div>
-                <div class="card-sub">English Medium • Rajasthan</div>
-              </div>
-            </div>
-            <div class="live-badge">
-              <div class="live-dot"></div>
-              Live
-            </div>
-          </div>
-
+          <div class="card-header"><div class="card-header-left"><div class="card-avatar"><i class="fas fa-graduation-cap"></i></div><div><div class="card-title">CET 2027 Batch</div><div class="card-sub">English Medium • Rajasthan</div></div></div><div class="live-badge"><div class="live-dot"></div>Live</div></div>
           <div class="subjects">
-            <div class="subject-row">
-              <div class="subj-top">
-                <span class="subj-name"><i class="fas fa-book" style="color:#4061db"></i> General Knowledge</span>
-                <span class="subj-pct">88%</span>
-              </div>
-              <div class="prog-bar"><div class="prog-fill prog-blue" style="width:88%"></div></div>
-            </div>
-            <div class="subject-row">
-              <div class="subj-top">
-                <span class="subj-name"><i class="fas fa-calculator" style="color:#f97316"></i> Mathematics</span>
-                <span class="subj-pct">75%</span>
-              </div>
-              <div class="prog-bar"><div class="prog-fill prog-orange" style="width:75%"></div></div>
-            </div>
-            <div class="subject-row">
-              <div class="subj-top">
-                <span class="subj-name"><i class="fas fa-language" style="color:#10b981"></i> English Grammar</span>
-                <span class="subj-pct">92%</span>
-              </div>
-              <div class="prog-bar"><div class="prog-fill prog-green" style="width:92%"></div></div>
-            </div>
-            <div class="subject-row">
-              <div class="subj-top">
-                <span class="subj-name"><i class="fas fa-flask" style="color:#8b5cf6"></i> Rajasthan GK</span>
-                <span class="subj-pct">80%</span>
-              </div>
-              <div class="prog-bar"><div class="prog-fill prog-purple" style="width:80%"></div></div>
-            </div>
+            <div class="subject-row"><div class="subj-top"><span class="subj-name"><i class="fas fa-book" style="color:#4061db"></i> General Knowledge</span><span class="subj-pct">88%</span></div><div class="prog-bar"><div class="prog-fill prog-blue" style="width:88%"></div></div></div>
+            <div class="subject-row"><div class="subj-top"><span class="subj-name"><i class="fas fa-calculator" style="color:#f97316"></i> Mathematics</span><span class="subj-pct">75%</span></div><div class="prog-bar"><div class="prog-fill prog-orange" style="width:75%"></div></div></div>
+            <div class="subject-row"><div class="subj-top"><span class="subj-name"><i class="fas fa-language" style="color:#10b981"></i> English Grammar</span><span class="subj-pct">92%</span></div><div class="prog-bar"><div class="prog-fill prog-green" style="width:92%"></div></div></div>
+            <div class="subject-row"><div class="subj-top"><span class="subj-name"><i class="fas fa-flask" style="color:#8b5cf6"></i> Rajasthan GK</span><span class="subj-pct">80%</span></div><div class="prog-bar"><div class="prog-fill prog-purple" style="width:80%"></div></div></div>
           </div>
-
-          <div class="card-stats">
-            <div class="cstat">
-              <div class="cstat-val" data-count="500">0+</div>
-              <div class="cstat-lab">Students Enrolled</div>
-            </div>
-            <div class="cstat">
-              <div class="cstat-val">Daily</div>
-              <div class="cstat-lab">Current Affairs</div>
-            </div>
-            <div class="cstat">
-              <div class="cstat-val">Free</div>
-              <div class="cstat-lab">Test Series</div>
-            </div>
-            <div class="cstat">
-              <div class="cstat-val">24/7</div>
-              <div class="cstat-lab">Study Material</div>
-            </div>
-          </div>
+          <div class="card-stats"><div class="cstat"><div class="cstat-val" data-count="500">0+</div><div class="cstat-lab">Students Enrolled</div></div><div class="cstat"><div class="cstat-val">Daily</div><div class="cstat-lab">Current Affairs</div></div><div class="cstat"><div class="cstat-val">Free</div><div class="cstat-lab">Test Series</div></div><div class="cstat"><div class="cstat-val">24/7</div><div class="cstat-lab">Study Material</div></div></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -618,25 +589,46 @@ img{max-width:100%;display:block;}
 <div class="stats-strip">
   <div class="container">
     <div class="stats-inner">
-      <div class="stat-item" style="animation-delay:.0s">
-        <div class="stat-num" id="sCount1">0</div>
-        <div class="stat-label">Students Enrolled</div>
-      </div>
-      <div class="stat-div"></div>
-      <div class="stat-item" style="animation-delay:.1s">
-        <div class="stat-num" id="sCount2">0</div>
-        <div class="stat-label">Video Lectures</div>
-      </div>
-      <div class="stat-div"></div>
-      <div class="stat-item" style="animation-delay:.2s">
-        <div class="stat-num" id="sCount3">0</div>
-        <div class="stat-label">Practice Tests</div>
-      </div>
-      <div class="stat-div"></div>
-      <div class="stat-item" style="animation-delay:.3s">
-        <div class="stat-num" id="sCount4">0</div>
-        <div class="stat-label">Study PDFs</div>
-      </div>
+      <div class="stat-item" style="animation-delay:.0s"><div class="stat-num" id="sCount1">0</div><div class="stat-label">Students Enrolled</div></div><div class="stat-div"></div>
+      <div class="stat-item" style="animation-delay:.1s"><div class="stat-num" id="sCount2">0</div><div class="stat-label">Video Lectures</div></div><div class="stat-div"></div>
+      <div class="stat-item" style="animation-delay:.2s"><div class="stat-num" id="sCount3">0</div><div class="stat-label">Practice Tests</div></div><div class="stat-div"></div>
+      <div class="stat-item" style="animation-delay:.3s"><div class="stat-num" id="sCount4">0</div><div class="stat-label">Study PDFs</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NEW SECTION: WHY CHOOSE EMC ===== -->
+<div class="section-pad">
+  <div class="container">
+    <div class="section-header">
+      <h2>Why Choose English Medium Classes?</h2>
+      <div class="sub">Everything you need to crack Rajasthan CET 2027 in one powerful English-medium platform.</div>
+    </div>
+    <div class="cards-grid">
+      <div class="card-new"><div class="card-icon-new"><i class="fas fa-chalkboard-user"></i></div><h3>🎥 Live Interactive Classes</h3><p>Attend high-quality live classes with real-time interaction and smart learning experience.</p></div>
+      <div class="card-new"><div class="card-icon-new"><i class="fas fa-user-graduate"></i></div><h3>👨‍🏫 Expert Faculty Guidance</h3><p>Learn from experienced teachers specialized in CET, Rajasthan GK, Maths & English.</p></div>
+      <div class="card-new"><div class="card-icon-new"><i class="fas fa-landmark"></i></div><h3>📚 Rajasthan GK Special Preparation</h3><p>Complete Rajasthan GK coverage with important facts, notes, quizzes & revision sessions.</p></div>
+      <div class="card-new"><div class="card-icon-new"><i class="fas fa-pen-to-square"></i></div><h3>📝 Daily Practice & Test Series</h3><p>Boost your preparation with chapter-wise tests, mock exams & daily MCQ practice.</p></div>
+      <div class="card-new"><div class="card-icon-new"><i class="fas fa-newspaper"></i></div><h3>📰 Daily Current Affairs</h3><p>Stay updated with daily current affairs PDFs, quizzes & exam-oriented discussions.</p></div>
+      <div class="card-new"><div class="card-icon-new"><i class="fas fa-comments"></i></div><h3>❓ Live Doubt Support</h3><p>Ask doubts anytime through live sessions, WhatsApp & student discussion support.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NEW SECTION: FREE RESOURCES ===== -->
+<div class="section-pad" style="padding-top:0;">
+  <div class="container">
+    <div class="section-header">
+      <h2>Free Study Resources for CET 2027</h2>
+      <div class="sub">Access high-quality free learning materials designed for Rajasthan CET aspirants.</div>
+    </div>
+    <div class="cards-grid">
+      <div class="card-new"><div class="card-icon-new alt-icon"><i class="fas fa-file-alt"></i></div><h3>📄 Previous Year Papers</h3><p>Practice real CET previous year question papers with detailed solutions.</p></div>
+      <div class="card-new"><div class="card-icon-new alt-icon"><i class="fas fa-pen-fancy"></i></div><h3>📘 Free Notes</h3><p>Download easy-to-understand English-medium notes for all important subjects.</p></div>
+      <div class="card-new"><div class="card-icon-new alt-icon"><i class="fas fa-chart-simple"></i></div><h3>🧪 Free Mock Test Series</h3><p>Attempt free online mock tests to improve speed, accuracy & confidence.</p></div>
+      <div class="card-new"><div class="card-icon-new alt-icon"><i class="fas fa-folder-open"></i></div><h3>📂 Study PDF Materials</h3><p>Get topic-wise PDFs, revision notes, current affairs & important question banks.</p></div>
+      <div class="card-new"><div class="card-icon-new alt-icon"><i class="fas fa-brain"></i></div><h3>🎯 Daily MCQ Practice</h3><p>Solve daily important MCQs specially prepared for CET 2027 preparation.</p></div>
+      <div class="card-new"><div class="card-icon-new alt-icon"><i class="fas fa-download"></i></div><h3>📥 One-Click Download Resources</h3><p>Download notes, PDFs, tests & study material anytime from mobile or desktop.</p></div>
     </div>
   </div>
 </div>
@@ -646,43 +638,21 @@ img{max-width:100%;display:block;}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="foot-logo">
-          <a href="index.html"><img class="logo-img" src="images/logo.jpg" alt="EMC Logo"></a>
-          <h2>English Medium Classes</h2>
-        </div>
+        <div class="foot-logo"><a href="index.html"><img class="logo-img" src="images/logo.jpg" alt="EMC Logo"></a><h2>English Medium Classes</h2></div>
         <p>Rajasthan's leading English-medium platform for CET 12th Level. Trusted by 500+ students since 2022.</p>
         <div class="social-row">
-          <a href="https://www.youtube.com/@CETENGLISHMEDIUMCLASSES2027" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.youtube.com/@englishmediumonly-yogendrasir" target="_blank" rel="noopener" aria-label="YouTube2"><i class="fab fa-youtube"></i></a>
-          <a href="#" aria-label="Telegram" onclick="event.preventDefault()"><i class="fab fa-telegram"></i></a>
-          <a href="#" aria-label="Instagram" onclick="event.preventDefault()"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="WhatsApp" onclick="event.preventDefault()"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.youtube.com/@CETENGLISHMEDIUMCLASSES2027" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@englishmediumonly-yogendrasir" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+          <a href="#" onclick="event.preventDefault()"><i class="fab fa-telegram"></i></a>
+          <a href="#" onclick="event.preventDefault()"><i class="fab fa-instagram"></i></a>
+          <a href="#" onclick="event.preventDefault()"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
-      <div class="footer-col">
-        <h5>Quick Links</h5>
-        <a href="courses.html"><i class="fas fa-chevron-right"></i> CET Course 2027</a>
-        <a href="courses.html"><i class="fas fa-chevron-right"></i> Integrated Batch</a>
-        <a href="courses.html"><i class="fas fa-chevron-right"></i> Syllabus & Pattern</a>
-      </div>
-      <div class="footer-col">
-        <h5>Resources</h5>
-        <a href="app.html"><i class="fas fa-chevron-right"></i> Daily Current Affairs</a>
-        <a href="app.html"><i class="fas fa-chevron-right"></i> Previous Year Papers</a>
-        <a href="app.html"><i class="fas fa-chevron-right"></i> Free Test Series</a>
-        <a href="app.html"><i class="fas fa-chevron-right"></i> Video Lectures</a>
-        <a href="app.html"><i class="fas fa-chevron-right"></i> Study Notes PDF</a>
-      </div>
-      <div class="footer-col">
-        <h5>Contact Us</h5>
-        <a href="mailto:pk621913@gmail.com"><i class="fas fa-envelope"></i> pk621913@gmail.com</a>
-        <a href="tel:+918227031017"><i class="fas fa-phone-alt"></i> +91 8227031017</a>
-        <a href="#"><i class="fas fa-map-marker-alt"></i> Rajasthan, India</a>
-      </div>
+      <div class="footer-col"><h5>Quick Links</h5><a href="courses.html"><i class="fas fa-chevron-right"></i> CET Course 2027</a><a href="courses.html"><i class="fas fa-chevron-right"></i> Integrated Batch</a><a href="courses.html"><i class="fas fa-chevron-right"></i> Syllabus & Pattern</a></div>
+      <div class="footer-col"><h5>Resources</h5><a href="app.html"><i class="fas fa-chevron-right"></i> Daily Current Affairs</a><a href="app.html"><i class="fas fa-chevron-right"></i> Previous Year Papers</a><a href="app.html"><i class="fas fa-chevron-right"></i> Free Test Series</a><a href="app.html"><i class="fas fa-chevron-right"></i> Video Lectures</a><a href="app.html"><i class="fas fa-chevron-right"></i> Study Notes PDF</a></div>
+      <div class="footer-col"><h5>Contact Us</h5><a href="mailto:pk621913@gmail.com"><i class="fas fa-envelope"></i> pk621913@gmail.com</a><a href="tel:+918227031017"><i class="fas fa-phone-alt"></i> +91 8227031017</a><a href="#"><i class="fas fa-map-marker-alt"></i> Rajasthan, India</a></div>
     </div>
-    <div class="copyright">
-      <p>© 2026 English Medium Classes — All rights reserved &nbsp;|&nbsp; Designed for CET 2027 aspirants 🎓</p>
-    </div>
+    <div class="copyright"><p>© 2026 English Medium Classes — All rights reserved &nbsp;|&nbsp; Designed for CET 2027 aspirants 🎓</p></div>
   </div>
 </footer>
 
@@ -693,24 +663,26 @@ img{max-width:100%;display:block;}
   // Hamburger
   const ham=document.getElementById('ham');
   const nav=document.getElementById('navMenu');
-  ham.addEventListener('click',function(e){
-    e.stopPropagation();
-    nav.classList.toggle('open');
-    const ic=ham.querySelector('i');
-    ic.className=nav.classList.contains('open')?'fas fa-times':'fas fa-bars';
-  });
-  nav.querySelectorAll('a').forEach(a=>{
-    a.addEventListener('click',()=>{
-      nav.classList.remove('open');
-      ham.querySelector('i').className='fas fa-bars';
+  if(ham && nav){
+    ham.addEventListener('click',function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+      const ic=ham.querySelector('i');
+      ic.className=nav.classList.contains('open')?'fas fa-times':'fas fa-bars';
     });
-  });
-  document.addEventListener('click',function(e){
-    if(!nav.contains(e.target)&&!ham.contains(e.target)){
-      nav.classList.remove('open');
-      ham.querySelector('i').className='fas fa-bars';
-    }
-  });
+    nav.querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click',()=>{
+        nav.classList.remove('open');
+        if(ham.querySelector('i')) ham.querySelector('i').className='fas fa-bars';
+      });
+    });
+    document.addEventListener('click',function(e){
+      if(!nav.contains(e.target)&&!ham.contains(e.target)){
+        nav.classList.remove('open');
+        if(ham.querySelector('i')) ham.querySelector('i').className='fas fa-bars';
+      }
+    });
+  }
 
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(link=>{
@@ -725,9 +697,9 @@ img{max-width:100%;display:block;}
   window.addEventListener('scroll',function(){
     stBtn.classList.toggle('visible',window.scrollY>300);
   });
-  stBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  if(stBtn) stBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-  // Counter animation
+  // Counter animation (stats strip)
   function animateCounter(el,target,suffix,duration){
     let start=0;
     const step=target/60;
@@ -737,11 +709,9 @@ img{max-width:100%;display:block;}
       el.textContent=Math.floor(start)+suffix;
     },duration/60);
   }
-
-  // Trigger counters when visible
   const statsSection=document.querySelector('.stats-strip');
   let counted=false;
-  const observer=new IntersectionObserver((entries)=>{
+  const observerStats=new IntersectionObserver((entries)=>{
     if(entries[0].isIntersecting&&!counted){
       counted=true;
       animateCounter(document.getElementById('sCount1'),500,'+',1800);
@@ -750,7 +720,7 @@ img{max-width:100%;display:block;}
       animateCounter(document.getElementById('sCount4'),100,'+',1800);
     }
   },{threshold:.3});
-  observer.observe(statsSection);
+  if(statsSection) observerStats.observe(statsSection);
 
   // Progress bars animate on load
   setTimeout(()=>{
@@ -761,6 +731,19 @@ img{max-width:100%;display:block;}
     });
   },600);
 
+  // Scroll reveal for new sections (card-new)
+  const newCards = document.querySelectorAll('.card-new');
+  if(newCards.length){
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+    newCards.forEach(card => revealObserver.observe(card));
+  }
 })();
 </script>
 </body>
